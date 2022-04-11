@@ -1,0 +1,24 @@
+server:
+  port: 8002
+
+
+spring:
+  application:
+    name: cloud-provider-payment8001
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/bjpowernode
+    username: root
+    password: conanshwk
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.springCloud.entities
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.server7001.com:7001/eureka,http://eureka.server7002.com:7002/eureka
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true
